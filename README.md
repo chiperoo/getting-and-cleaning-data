@@ -6,6 +6,7 @@ The purpose of this project is to demonstrate your ability to collect, work with
 
 ## Grading Criteria
 The review criteria for the project is as follows:
+
 1. The submitted data set is tidy.
 2. The Github repo contains the required scripts.
 3. GitHub contains a code book that modifies and updates the available codebooks with the data to indicate all the variables and summaries calculated, along with units, and any other relevant information.
@@ -23,7 +24,8 @@ The [zipped data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2
 * `README.md` - This file.
 
 ## Tidy notes
-This data in `tidy_data.txt` is the long form of tidy data. Per the criteria that defines tidy:
+The data in the generated `tidy_data.txt` is the long form of tidy data. Per 
+the criteria that defines tidy:
   1. Each variable forms a column
     * The variables here are: `subject_id`, `activity`, `measurement`, `value`
   2. Each observation forms a row
@@ -33,7 +35,7 @@ This data in `tidy_data.txt` is the long form of tidy data. Per the criteria tha
 
 ## Getting started
 1. Download and unzip the [experiment data]((https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) in the current working directory.
-2. Run the `run_analysis.R` script.
+2. Run the `run_analysis.R` script to generate the `tidy_data.txt` output.
 3. The `tidy_data.txt` file will be generated in the current working directory.
 4. To read in the tidy data, run:
 
