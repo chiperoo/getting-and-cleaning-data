@@ -34,7 +34,7 @@ the criteria that defines tidy:
     * Everything is contained in one table
 
 ## Getting started
-1. Download and unzip the [experiment data]((https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) in the current working directory.
+1. Download and unzip the [experiment data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) in the current working directory.
 2. Run the `run_analysis.R` script to generate the `tidy_data.txt` output.
 3. The `tidy_data.txt` file will be generated in the current working directory.
 4. To read in the tidy data, run:
