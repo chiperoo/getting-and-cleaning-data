@@ -108,34 +108,34 @@ activity, and measurement
 1. Load the data files:
 	1. Training files
 
-	```r
-	x_train <- read.table("UCI\ HAR\ Dataset/train/X_train.txt")
-	y_train <- read.table("UCI\ HAR\ Dataset/train/y_train.txt")
-	s_train <- read.table("UCI\ HAR\ Dataset/train/subject_train.txt")
-	```
+		```r
+		x_train <- read.table("UCI\ HAR\ Dataset/train/X_train.txt")
+		y_train <- read.table("UCI\ HAR\ Dataset/train/y_train.txt")
+		s_train <- read.table("UCI\ HAR\ Dataset/train/subject_train.txt")
+		```
 
-	4. Testing files
+	2. Testing files
 
-	```r
-	x_test <- read.table("UCI\ HAR\ Dataset/test/X_test.txt")
-	y_test <- read.table("UCI\ HAR\ Dataset/test/y_test.txt")
-	s_test <- read.table("UCI\ HAR\ Dataset/test/subject_test.txt")
-	```
+		```r
+		x_test <- read.table("UCI\ HAR\ Dataset/test/X_test.txt")
+		y_test <- read.table("UCI\ HAR\ Dataset/test/y_test.txt")
+		s_test <- read.table("UCI\ HAR\ Dataset/test/subject_test.txt")
+		```
 
-	7. Features
+	3. Features
 
-	```r
-	label_names = read.table("UCI\ HAR\ Dataset/features.txt", 
-                         colClasses = c("NULL",NA), 
-                         stringsAsFactors=FALSE)
-	```
+		```r
+		label_names = read.table("UCI\ HAR\ Dataset/features.txt", 
+	                         colClasses = c("NULL",NA), 
+	                         stringsAsFactors=FALSE)
+		```
 
-	8. Activities
+	4. Activities
 
-	```r
-	activity_labels = read.table("UCI\ HAR\ Dataset/activity_labels.txt", 
-                         stringsAsFactors=FALSE)
-	```
+		```r
+		activity_labels = read.table("UCI\ HAR\ Dataset/activity_labels.txt", 
+	                         stringsAsFactors=FALSE)
+		```
 
 2. Merge the data frames
 	1. `cbind` the train data frames
