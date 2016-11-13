@@ -160,10 +160,10 @@ activity, and measurement
 		1. Add in `activity_id` and `subject_id` respectively to reflect Y and 
 		subject data frames
 
-		```r
-		colnames(total_data) <- c(label_names$V2, "activity_id", "subject_id")
-		
-		```
+			```r
+			colnames(total_data) <- c(label_names$V2, "activity_id", "subject_id")
+			
+			```
 
 	5. Rename the columns of the `activity_labels` data frame
 		
@@ -175,10 +175,10 @@ activity, and measurement
 	1. Fix the column names to make them unique. This collapses all names to 
 	valid R names by replacing each invalid character to a ".".
 
-	```r
-	valid_column_names <- make.names(names=names(total_data), unique = TRUE)
-	names(total_data) <- valid_column_names
-	```
+		```r
+		valid_column_names <- make.names(names=names(total_data), unique = TRUE)
+		names(total_data) <- valid_column_names
+		```
 
 	2. Add in the activity name to `total_data`
 		
@@ -192,11 +192,11 @@ activity, and measurement
 	columns are not removed.
 	6. Store the resulting data frame into `mean_std_data`
 
-	```r
-	mean_std_data <- total_data %>% 
-  		select(matches(".*(mean|std)|^activity$|^subject_id$")) %>%
-  		select(-matches("^(.*angle).*$"))
-  	```
+		```r
+		mean_std_data <- total_data %>% 
+	  		select(matches(".*(mean|std)|^activity$|^subject_id$")) %>%
+	  		select(-matches("^(.*angle).*$"))
+	  	```
 
 4. Create the tidy data set
 	1. Clean the column names from `mean_std_data`
@@ -208,28 +208,28 @@ activity, and measurement
 	5. Sort by `subject_id`, `activity`, and `measurement`
 	6. Store the data into `tidy_data`
 
-	```r
-	tidy_data <- mean_std_data %>% 
-  		clean_names() %>% 
-  		gather(measurement, value, tbodyacc_mean_x:fbodybodygyrojerkmag_meanfreq) %>% 
-  		group_by(subject_id,activity,measurement) %>% 
-  		summarise(avg_value=mean(value)) %>% 
-  		arrange(subject_id, activity, measurement)
-  	```
+		```r
+		tidy_data <- mean_std_data %>% 
+	  		clean_names() %>% 
+	  		gather(measurement, value, tbodyacc_mean_x:fbodybodygyrojerkmag_meanfreq) %>% 
+	  		group_by(subject_id,activity,measurement) %>% 
+	  		summarise(avg_value=mean(value)) %>% 
+	  		arrange(subject_id, activity, measurement)
+	  	```
 
 	7. Make the measurements more descriptive
 
-  	```r
-	tidy_data$measurement <- gsub("^f","frequency_", tidy_data$measurement) 
-	tidy_data$measurement <- gsub("^t","time_", tidy_data$measurement) 
-	tidy_data$measurement <- gsub("(body){2}","body_", tidy_data$measurement) 
-	tidy_data$measurement <- gsub("acc","acceleration_", tidy_data$measurement) 
-	tidy_data$measurement <- gsub("(body)([a-z])","body_\\2", tidy_data$measurement)
-	tidy_data$measurement <- gsub("(gyro)","gyroscope_", tidy_data$measurement)
-	tidy_data$measurement <- gsub("(gravity)","gravity_", tidy_data$measurement)
-	tidy_data$measurement <- gsub("(jerk)","jerk_", tidy_data$measurement)
-	tidy_data$measurement <- gsub("(_){2}","_", tidy_data$measurement)
-  	```
+	  	```r
+		tidy_data$measurement <- gsub("^f","frequency_", tidy_data$measurement) 
+		tidy_data$measurement <- gsub("^t","time_", tidy_data$measurement) 
+		tidy_data$measurement <- gsub("(body){2}","body_", tidy_data$measurement) 
+		tidy_data$measurement <- gsub("acc","acceleration_", tidy_data$measurement) 
+		tidy_data$measurement <- gsub("(body)([a-z])","body_\\2", tidy_data$measurement)
+		tidy_data$measurement <- gsub("(gyro)","gyroscope_", tidy_data$measurement)
+		tidy_data$measurement <- gsub("(gravity)","gravity_", tidy_data$measurement)
+		tidy_data$measurement <- gsub("(jerk)","jerk_", tidy_data$measurement)
+		tidy_data$measurement <- gsub("(_){2}","_", tidy_data$measurement)
+	  	```
 
 5. Write the tidy data to file
 
