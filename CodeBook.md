@@ -106,43 +106,23 @@ activity, and measurement
 
 ## Methodology
 1. Load the data files:
-	1. `UCI HAR Dataset/train/X_train.txt`
+	1. Training files
 
 	```r
 	x_train <- read.table("UCI\ HAR\ Dataset/train/X_train.txt")
-	```
-
-	2. `UCI HAR Dataset/train/y_train.txt`
-
-	```r
 	y_train <- read.table("UCI\ HAR\ Dataset/train/y_train.txt")
-	```
-
-	3. `UCI HAR Dataset/train/subject_train.txt`
-
-	```r
 	s_train <- read.table("UCI\ HAR\ Dataset/train/subject_train.txt")
 	```
 
-	4. `UCI HAR Dataset/test/X_test.txt`
+	4. Testing files
 
 	```r
 	x_test <- read.table("UCI\ HAR\ Dataset/test/X_test.txt")
-	```
-
-	5. `UCI HAR Dataset/test/y_test.txt`
-
-	```r
 	y_test <- read.table("UCI\ HAR\ Dataset/test/y_test.txt")
-	```
-
-	6. `UCI HAR Dataset/test/subject_test.txt`
-
-	```r
 	s_test <- read.table("UCI\ HAR\ Dataset/test/subject_test.txt")
 	```
 
-	7. `UCI HAR Dataset/features.txt`
+	7. Features
 
 	```r
 	label_names = read.table("UCI\ HAR\ Dataset/features.txt", 
@@ -150,7 +130,7 @@ activity, and measurement
                          stringsAsFactors=FALSE)
 	```
 
-	8. `UCI HAR Dataset/activity_labels.txt`
+	8. Activities
 
 	```r
 	activity_labels = read.table("UCI\ HAR\ Dataset/activity_labels.txt", 
